@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery UI Accordion - Default functionality</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $( function() {
+            $( "#accordion" ).accordion();
+        } );
+    </script>
+    <style>
+        div {
+            background-color:#fcd188;
+        }
+        #accordion {
+
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+
+<div id="accordion">
+    <h3>Q1 ...What is jQuery? How do you add jquery to your website?</h3>
+    <div>
+        <p>
+            The purpose of jQuery is to make it much easier to use JavaScript on your website.
+            jQuery is a lightweight, "write less, do more", JavaScript library.
+
+            jQuery takes a lot of common tasks that require many lines of JavaScript code to accomplish, and wraps them into methods that you can call with a single line of code.
+
+            jQuery also simplifies a lot of the complicated things from JavaScript, like AJAX calls and DOM manipulation.
+
+            The jQuery library contains the following features:
+
+            HTML/DOM manipulation
+            CSS manipulation
+            HTML event methods
+            Effects and animations
+            AJAX
+            Utilities
+            Tip: In addition, jQuery has plugins for almost any task out there.
+
+            Why jQuery?
+            There are lots of other JavaScript frameworks out there, but jQuery seems to be the most popular, and also the most extendable.
+            jQuery will run exactly the same in all major browsers, including Internet Explorer 6!
+            With jQuery you select (query) HTML elements and perform "actions" on them.
+
+            jQuery Syntax
+            The jQuery syntax is tailor-made for selecting HTML elements and performing some action on the element(s).
+
+            Basic syntax is: $(selector).action()
+
+            A $ sign to define/access jQuery
+            A (selector) to "query (or find)" HTML elements
+            A jQuery action() to be performed on the element(s)
+            Examples:
+
+            $(this).hide() - hides the current element.
+
+            $("p").hide() - hides all <p> elements.
+            To use jQuery from Google or Microsoft, use one of the following in the head tag:
+
+            Google CDN:
+
+                 src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"
+
+
+        </p>
+    </div>
+    <h3>Q2...Which built-in method returns the character at the specified index?</h3>
+    <div>
+        <p>
+            charAt<br>
+
+                var str = new String( "This is string" );
+                document.writeln("str.charAt(0) is:" + str.charAt(0));
+                document.writeln("<br />str.charAt(1) is:" + str.charAt(1));
+                document.writeln("<br />str.charAt(2) is:" + str.charAt(2));
+                document.writeln("<br />str.charAt(3) is:" + str.charAt(3));
+                document.writeln("<br />str.charAt(4) is:" + str.charAt(4));
+                document.writeln("<br />str.charAt(5) is:" + str.charAt(5));
+
+
+        </p>
+    </div>
+    <h3>Q3...Which built-in method combines the text of two strings and returns a new string?</h3>
+
+    <div>
+        <p>
+            concat() method returns the character at the specified index.
+            var str1 = new String( "This is string one" );
+            var str2 = new String( "This is string two" );
+            var str3 = str1.concat( str2 );
+
+            console.log("Concatenated String :" + str3);</p></div>
+          <h3> Q3...Which built-in method returns the index within the calling String object of the first occurrence of the specified value, or -1 if not found.</h3>
+    <div>
+        <p>  indexOf() method
+            string.indexOf(searchValue[, fromIndex])
+            Argument Details
+            searchValue − A string representing the value to search for.
+
+            fromIndex − The location within the calling string to start the search from. It can be any integer between 0 and the length of the string. The default value is 0.
+
+            var str1 = new String( "This is string one" );
+            var index = str1.indexOf( "string" );
+            console.log(index );
+
+            document.write("<br />");
+            var index = str1.indexOf( "one" );
+            console.log(index );
+        </p>
+
+    </div>
+    <h3>Q4...Diffrence between bind(),delegate(), live(), on()</h3>
+    <div>
+        <p>
+
+            All the three jQuery functions are used to attach events to selectors or elements. But just think why there are 3 different functions for same purpose?
+
+            bind() vs live()
+
+            The basic difference between bind and live is bind will not attach the event handler to those elements which are added/appended after DOM is loaded. bind() only attach events to the current elements not future element.
+
+            live() vs delegate()
+
+            Well, the difference between live and delegate is, live function can't be used in chaining. live function needs to be used directly on a selector/element. For example, if I have a div with id "dvContainer",which have a table in it with some other elements.
+
+            If you don't specify the context with live function then it attaches the handler to the document by default and when executed it traverse through the DOM which causes a performance issue.
+            You can use any of these function but delegate function has advantage of performance, chaining issue and works for future created elements.
+
+            The on() method attaches one or more event handlers for the selected elements and child elements.
+
+            As of jQuery version 1.7, the on() method is the new replacement for the bind(), live() and delegate() methods. This method brings a lot of consistency to the API, and is the recommended method, as it simplifies the jQuery code base.
+
+            Note: Event handlers attached using the on() method will work for both current and FUTURE elements (like a new element created by a script).
+
+            Tip: To remove event handlers, use the off() method.
+
+            Tip: To attach an event that only runs once and then removes itself, use the one() method.
+        </p>
+
+    </div>
+    <h3>Q5...$("h1, p.bar, span")	, $("tr:eq(1)")</h3>
+    <div>
+        <p>
+            Selects all h1 tag and span tag, but only that p tag elements that has the class="bar".
+
+            Select the 2nd tr tag
+            Basic Selectors
+        </p>
+    </div>
+    <h3>Q6...$('p:contains("Hello")')</h3>
+    <div>
+        <p>
+            Selects all p elements that contains the text "Hello".
+            Content Filter Selectors
+    </p>
+
+    </div>
+    <h3>Q7...$("p:has(img)")</h3>
+    <div>
+        <p>
+            Selects all p elements which contain at least one img element.
+            Content Filter Selectors
+
+        </p>
+
+    </div>
+    <h3>Q8...$(":input")</h3>
+    <div>
+        <p>
+            Selects all input, textarea, select and button elements (basically selects all form controls).
+            Form Selectors
+    </p>
+
+    </div>
+
+<h3>Q8...$('img[title~="Kites"]')</h3>
+<div>
+    <p>
+        Selects all img elements that have the title attribute with a value containing the word "Kites", delimited by spaces.
+        Attribute Selectors
+    </p>
+
+</div>
+    <h3>Q9...	$("h1 ~ p")</h3>
+    <div>
+
+            Selects all p elements that are siblings and follow after the h1 elements. -Hierarchy Selectors
+
+
+    </div>
+    <h3>Q10...	$('input[name*="male"]')</h3>
+    <div>
+        <p>
+            Selects all input elements that have the name attribute with  a value containing the substring "male".
+            Attribute Selectors
+
+        </p>
+
+    </div>
+    <h3>Q11... $('img[title^="Smiley"]')</h3>
+    <div>
+        <p>
+            Selects all img elements that have the title attribute with a value beginning exactly with a "Smiley" string.
+            Attribute Selectors
+
+        </p>
+
+    </div>
+    <h3>Q12... $("p:nth-last-of-type(2)")</h3>
+    <div>
+        <p>
+            Selects all <p> elements that are the 2nd-child of their parent, counting from the last element to the first.
+        Child Filter Selectors
+
+        </p>
+
+    </div>
+
+    <h3>Q13... $(":parent")</h3>
+    <div>
+        <p>
+            Select all elements that have at least one child node either an element or text.
+            Content Filter Selectors
+
+    </p>
+
+    </div>
+    <h3>Q14... What is the difference between jQuery event.stopImmediatePropagation() Method and event.stopPropagation()</h3>
+    <div>
+        <p>
+            The event.stopImmediatePropagation() method stops the rest of the event handlers from being executed.
+
+            This method also stops the event from bubbling up the DOM tree.
+
+            Tip: Use the event.isImmediatePropagationStopped() method to check whether this method was called for the event.
+
+            Syntax
+            event.stopImmediatePropagation()
+            example: $("div").click(function(event){
+            alert("Event handler 1 executed");
+            event.stopImmediatePropagation();
+            });
+            $("div").click(function(event){
+            alert("Event handler 2 executed");
+            });
+            $("div").click(function(event){
+            alert("Event handler 3 executed");
+            });
+
+            event.stopPropagation() - Stops the click event from bubbling to parent elements:
+
+            $("span").click(function(event){
+            event.stopPropagation();
+            alert("The span element was clicked.");
+            });
+            $("p").click(function(event){
+            alert("The p element was clicked.");
+            });
+            $("div").click(function(){
+            alert("The div element was clicked.");
+            });
+
+    </p>
+
+    </div>
+
+    <h3>Q15... What is the difference between unbind(),unload(),undelegate(),off(),</h3>
+    <div>
+        <p>
+            Remove the click event for all p elements:<br>
+
+        $("button").click(function(){<br>
+        $("p").off("click");<br>
+        });<br>
+
+        unbind()	Deprecated in version 3.0. Use the off() method instead. Removes an added event handler from selected elements<br>
+        undelegate()	Deprecated in version 3.0. Use the off() method instead. Removes an event handler to selected elements, now or in the future<br>
+        unload()	Removed in version 3.0. Attaches an event handler to the unload event<br>
+        </p>
+
+    </div>
+    <h3>Q16... Explain jQuery - Chaining with a example
+        </h3>
+    <div>
+
+            Until now we have been writing jQuery statements one at a time (one after the other).
+
+            However, there is a technique called chaining, that allows us to run multiple jQuery commands, one after the other, on the same element(s).
+
+            Tip: This way, browsers do not have to find the same element(s) more than once.
+
+            To chain an action, you simply append the action to the previous action.
+
+           <!-- <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+            <style type="text/css">
+                /* Some custom styles to beautify this example */
+                p {
+                    width: 200px;
+                    padding: 40px 0;
+                    font: bold 24px sans-serif;
+                    text-align: center;
+                    background: #aaccaa;
+                    border: 1px solid #63a063;
+                    box-sizing: border-box;
+                }
+            </style>
+            <script type="text/javascript">
+                $(document).ready(function(){
+                    $(".start").click(function(){
+                        $("p")
+                                .animate({width: "100%"})
+                                .animate({fontSize: "46px"})
+                                .animate({borderWidth: 30});
+                    });
+                    $(".reset").click(function(){
+                        $("p").removeAttr("style");
+                    });
+                });
+            </script>
+            </head>
+        <body>
+        <p>Hello World!</p>
+        <button type="button" class="start">Start Chaining</button>
+        <button type="button" class="reset">Reset</button>
+    </p>-->
+
+    </div>
+</div>
+
+</body>
+</html>
